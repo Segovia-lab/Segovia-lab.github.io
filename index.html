@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizacion Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <script src="three.js"></script>
+	<script type="module" src="three.js"></script>
+	<script type="module" src="GLTFLoader.js"></script>
+	<script type="module" src="OrbitControls.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="stats.module.js"></script>
+
+
+    <div class="sidebar2" id="datosHep">
+
+        <div class="datos" id="texto">
+            <h1>Hepatocitos</h1>
+            <p>este es un texto de prueba para hepatocitos</p>
+
+        </div>
+    </div>
+
+    <div class="sidebar2" id="datosVenas">
+
+        <div class="datos" id="texto">
+            <h1>Venas</h1>
+            <p>este es un texto de prueba para venas</p>
+
+        </div>
+    </div>
+
+    <div class="sidebar2" id="datosSinu">
+
+        <div class="datos" id="texto">
+            <h1>Sinusoides</h1>
+            <p>este es un texto de prueba para sinusoides</p>
+
+        </div>
+    </div>
+
+    <div class="sidebar2" id="datosEst">
+
+        <div class="datos" id="texto">
+            <h1>Estrelladas</h1>
+            <p>este es un texto de prueba para estrelladas</p>
+
+        </div>
+    </div>
+
+    <div class="sidebar2" id="datosKup">
+
+        <div class="datos" id="texto">
+            <h1>Kupffer</h1>
+            <p>este es un texto de prueba para kupffer</p>
+
+        </div>
+    </div>
+
+    <div class="sidebar2" id="datosNuc">
+
+        <div class="datos" id="texto">
+            <h1>Núcleos</h1>
+            <p>este es un texto de prueba para nucleos</p>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="sidebar" id="barraPrincipal">
+        <div class="logo_content">
+            <div class="logo"><i class='bx bx-cube-alt'></i>
+                <div class="logo_name">3D Viewer Cell and Tissue Arquitecture Lab</div>
+                
+            </div>
+        </div>
+        <div>
+            <input type="color" id="hep" value="#a8adb5" class="colorinput">
+            <label for="hep">Hepatocitos</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioHep"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transHep">
+        </div>
+        <div>
+            <input type="color" id="vein" value="#ff0000">
+            <label for="vein">Venas</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioVenas"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transVein">
+        </div>
+        <div>
+            <input type="color" id="sinu" value="#e600ff">
+            <label for="vein">Sinusoides</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioSinu"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transSinu">
+        </div>
+        <div>
+            <input type="color" id="f480" value="#00f7ff">
+            <label for="vein">Estrelladas</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioEst"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transF480">
+        </div>
+        <div>
+            <input type="color" id="desmin" value="#ff2f00">
+            <label for="vein">Kupffer</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioKup"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transDesmin">
+        </div>
+        <div>
+            <input type="color" id="nuclei" value="#a8adb5">
+            <label for="vein">Núcleos</label>
+
+            <bdato href="#">
+                <button class="botonInfo" id="cambioNuc"><i class='bx bx-info-circle'></i></button>
+            </bdato>
+
+        </div>
+        <div class="slidecontainer">
+            <input type="range" min="0" max="1" value="1" step="0.1" class="slider" id="transNuclei">
+        </div>
+
+
+        <ul class="nav_list">
+            <li>
+                <a href="#">
+                    <i class='bx bx-cube-alt'></i>
+                    <button style="top:0" id="suj1">Sujeto 1</button>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cube-alt'></i>
+                    <button style="top:0" id="suj2">Sujeto 2</button>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cube-alt'></i>
+                    <button style="top:0" id="suj3">Sujeto 3</button>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cube-alt'></i>
+                    <button style="top:0" id="suj4">Sujeto 4</button>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder-open'></i>
+                    <button style="top:0" id="modelos">Modelos</button>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-message-square-detail'></i>
+                    <button style="top:0" id="datos">Datos</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
